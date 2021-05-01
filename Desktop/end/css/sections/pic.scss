@@ -1,0 +1,73 @@
+.container{
+    width: 1200px;
+    margin: auto;
+    
+}
+.cards__pic{
+    width: 100%;
+    height: 150px;
+    background-color: palevioletred;
+    position: relative;
+    overflow: hidden;
+}
+.cards{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cards__item{
+    width: calc(100%/3 - 20px);
+    margin-bottom: 20px;
+}
+.cards__pic::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 20px;
+    background-color: $green;
+    position: absolute;
+    bottom: -20px;
+    transition: 0.5s;
+}
+
+.cards__item:hover .cards__pic::after{
+    bottom: 0px;
+}
+.ch1{
+    position: absolute;
+    left: -99999px; 
+}
+.lab1{
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.lab1:before{
+    content: "";
+    width: 18px;
+    height: 18px;
+    border: 1px solid $red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 3px;
+}
+.lab1:after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 5px;
+    border-radius: 1px;
+    top: 4px;
+    left: 3px;
+    transform: rotate(-45deg);
+    border-left: 4px solid $green;
+    border-bottom: 4px solid $green;
+}
+.ch1:not(:checked) + .lab1:after{
+    opacity: 0;
+}
